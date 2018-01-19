@@ -1,0 +1,215 @@
+body {
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-toggler {
+  border: 0;
+  font-size: 1rem;
+}
+
+.jumbotron {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  transition: all .3s ease;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(194,194,194,0.6);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(194,194,194,0.6);
+  box-shadow: 0px 0px 8px 2px rgba(194,194,194,0.6);
+}
+
+.card > a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #888;
+}
+
+.card > a > img {
+  width: 100%;
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+/*Search*/
+.search-form {
+  position: relative;
+  height: 50px;
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(194,194,194,0.6);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(194,194,194,0.6);
+  box-shadow: 0px 0px 8px 2px rgba(194,194,194,0.6);
+  background: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.search-form.focus {
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+.search-input {
+  position: absolute;
+  top: 5px;
+  left: 38px;
+  font-size: 14px;
+  background: none;
+  color: #5a6674;
+  height: 40px;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+}
+.search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.search-button {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  height: 40px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  outline: none !important;
+  cursor: pointer;
+}
+.search-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #5a6674;
+}
+
+.search-option {
+  position: absolute;
+  text-align: right;
+  top: 10px;
+  right: 15px;
+}
+.search-option div {
+  position: relative;
+  display: inline-block;
+  margin: 0 1px;
+  cursor: pointer;
+}
+.search-option div input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.01;
+  cursor: pointer;
+}
+.search-option div span {
+  position: absolute;
+  display: block;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  background: #929AA3;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 4px 7px;
+  border-radius: 12px;
+  top: -18px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.search-option div span::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-top: 4px solid #929AA3;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.search-option div:hover span {
+  opacity: 1;
+  top: -21px;
+}
+.search-option div label {
+  display: block;
+  cursor: pointer;
+}
+.search-option div svg {
+  height: 20px;
+  width: 20px;
+  fill: #5a6674;
+  opacity: 0.6;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  pointer-events: none;
+}
+.search-option div:hover svg {
+  opacity: 1;
+}
+.search-option div input:checked + label svg {
+  fill: #e24040;
+  opacity: .9;
+}
+.search-option div input:checked + label span {
+  background: #e24040;
+}
+.search-option div input:checked + label span::after {
+  border-top-color: #e24040;
+}
+/*#Search*/

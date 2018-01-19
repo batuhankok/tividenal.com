@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Tividenal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  </head>
+
+  <body ng-app="app">
+
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 py-4">
+              <h4 class="text-white">Tividenal</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand">Tividenal</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Menü Göster">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main" ng-controller="tividenal">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Dilediğinizce arayın...</h1>
+            <p class="lead text-muted">Arama kutusuna oyuncu adı, cinsiyet, renk, sahne adı gibi bir çok filtre ekleyerek, merak ettiğiniz ürünü kolayca bulabilirsiniz.</p>
+          
+            <form class="search-form col-lg-12">
+                <input type="search" value="" placeholder="Buraya yazın ve bekleyin :)" ng-model="tags" class="search-input col-lg-11 col-md-11 col-sm-12">
+                <button type="button" class="search-button">
+                    <svg class="submit-button"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+                </button>
+            </form>  
+        </div>
+      </section>
+
+      <div class="album text-muted">
+        <div class="container">
+
+            <div class="row col-lg-12">
+
+                <div class="col-sm-6 col-lg-4" ng-repeat="item in items | filter:tag">
+                    <div class="card">
+                        <a href="">
+                            <img src="{{item.image}}" alt="Card image cap">
+                            <p class="card-text">{{item.title}}</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!--<div class="row col-lg-12">
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card">
+                        <a href="">
+                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card">
+                        <a href="">
+                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card">
+                        <a href="">
+                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card">
+                        <a href="">
+                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card">
+                        <a href="">
+                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card">
+                        <a href="">
+                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>-->
+
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Yukarı Çık</a>
+        </p>
+        <p><b>Tividenal.com</b> bir Doğuş Yeni Girişimler A.Ş. projesidir.</p>
+      </div>
+    </footer>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
+        <symbol id="search" viewBox="0 0 32 32">
+            <path d="M 19.5 3 C 14.26514 3 10 7.2651394 10 12.5 C 10 14.749977 10.810825 16.807458 12.125 18.4375 L 3.28125 27.28125 L 4.71875 28.71875 L 13.5625 19.875 C 15.192542 21.189175 17.250023 22 19.5 22 C 24.73486 22 29 17.73486 29 12.5 C 29 7.2651394 24.73486 3 19.5 3 z M 19.5 5 C 23.65398 5 27 8.3460198 27 12.5 C 27 16.65398 23.65398 20 19.5 20 C 15.34602 20 12 16.65398 12 12.5 C 12 8.3460198 15.34602 5 19.5 5 z" />
+        </symbol>
+    </svg>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+
+
+
+    <script src="lib/tag-input-autocomplete-tl.min.js"></script>
+
+  </body>
+</html>
