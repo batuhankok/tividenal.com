@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Tividenal</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/tividenal.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   </head>
 
-  <body ng-app="app">
-
+  <body ng-app="Tividenal">
+      
     <header>
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -50,91 +49,46 @@
       </div>
     </header>
 
-    <main role="main" ng-controller="tividenal">
+    <main role="main" ng-controller="ItemsController">
 
       <section class="jumbotron text-center">
         <div class="container">
             <h1 class="jumbotron-heading">Dilediğinizce arayın...</h1>
-            <p class="lead text-muted">Arama kutusuna oyuncu adı, cinsiyet, renk, sahne adı gibi bir çok filtre ekleyerek, merak ettiğiniz ürünü kolayca bulabilirsiniz.</p>
+            <p class="lead text-muted">
+                Arama kutusuna oyuncu adı, cinsiyet, renk, sahne adı gibi bir çok filtre ekleyerek, merak ettiğiniz ürünü kolayca bulabilirsiniz.
+            </p>
           
             <form class="search-form col-lg-12">
-                <input type="search" value="" placeholder="Buraya yazın ve bekleyin :)" ng-model="tags" class="search-input col-lg-11 col-md-11 col-sm-12">
+                <input type="text" value="" placeholder="Buraya yazın ve bekleyin :)" ng-model="tags" class="search-input col-lg-11 col-md-11 col-sm-12">
                 <button type="button" class="search-button">
                     <svg class="submit-button"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
-                </button>
+                </button> 
             </form>  
         </div>
       </section>
 
-      <div class="album text-muted">
+      <div class="items text-muted">
         <div class="container">
 
             <div class="row col-lg-12">
 
-                <div class="col-sm-6 col-lg-4" ng-repeat="item in items | filter:tag">
+                <div class="col-sm-6 col-lg-4" dir-paginate="item in items | filter:tag | itemsPerPage: pageSize" current-page="currentPage">
                     <div class="card">
-                        <a href="">
-                            <img src="{{item.image}}" alt="Card image cap">
+                        <a href="{{item.url}}">
+                            <img ng-src="{{item.image}}" alt="Card image cap">
                             <p class="card-text">{{item.title}}</p>
                         </a>
                     </div>
+                   
                 </div>
 
             </div>
-            
-            <!--<div class="row col-lg-12">
 
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card">
-                        <a href="">
-                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </a>
-                    </div>
+            <div ng-controller="PaginationController">
+                <div class="text-center">
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="components/pagination/dirPagination.tpl.html"></dir-pagination-controls>
                 </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card">
-                        <a href="">
-                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card">
-                        <a href="">
-                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card">
-                        <a href="">
-                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card">
-                        <a href="">
-                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card">
-                        <a href="">
-                            <img src="https://static.zara.net/photos///2017/I/0/1/p/8073/245/510/2/w/1920/8073245510_2_4_1.jpg?ts=1502963575171" alt="Card image cap">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </a>
-                    </div>
-                </div>
-
-            </div>-->
+            </div>
 
         </div>
       </div>
@@ -156,17 +110,8 @@
         </symbol>
     </svg>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/custom.js"></script>
-
-
-
-
-    <script src="lib/tag-input-autocomplete-tl.min.js"></script>
+    <script src="tividenal.js"></script>
+    <script src="components/pagination/dirPagination.js"></script>
 
   </body>
 </html>

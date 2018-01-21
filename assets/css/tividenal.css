@@ -1,5 +1,4 @@
 body {
-  min-height: 75rem; /* Can be removed; just added for demo purposes */
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -31,8 +30,7 @@ body {
   max-width: 40rem;
 }
 
-.album {
-  min-height: 50rem; /* Can be removed; just added for demo purposes */
+.items {
   padding-top: 3rem;
   padding-bottom: 3rem;
   background-color: #f7f7f7;
@@ -65,6 +63,14 @@ body {
 
 .card-text {
   font-size: 85%;
+}
+
+.col-sm-12{
+  transition: .5ms all ease;
+}
+
+.col-sm-6{
+  transition: .5ms all ease;
 }
 
 footer {
