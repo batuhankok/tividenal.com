@@ -15,6 +15,8 @@ function ItemsController($scope, $http) {
 
   $scope.items = null;
 
+  console.log($("#q").val());
+
   $scope.tag = function(message) {
     if ($scope.tags) {
       return $scope.tags.replace(/\s*,\s*/g, ',').split(',').every(function(tag) {

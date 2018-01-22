@@ -9,7 +9,8 @@
     <title>Tividenal</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="components/tagsInput/bootstrap-tagsinput.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="assets/css/tividenal.css" rel="stylesheet">
@@ -37,8 +38,8 @@
                 Arama kutusuna oyuncu adı, cinsiyet, renk, sahne adı gibi bir çok filtre ekleyerek, merak ettiğiniz ürünü kolayca bulabilirsiniz.
             </p>
           
-            <form class="search-form col-lg-12">
-                <input type="text" value="" placeholder="Buraya yazın ve bekleyin :)" ng-model="tags" class="search-input col-lg-11 col-md-11 col-sm-12">
+            <form class="col-lg-12">
+                <input type="text" value="" id="q" ng-model="tags" data-role="tagsinput"> 
                 <button type="button" class="search-button">
                     <svg class="submit-button"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
                 </button> 
@@ -48,7 +49,6 @@
 
       <div class="items text-muted">
         <div class="container">
-
             <div class="row col-lg-12">
 
                 <div class="col-sm-6 col-lg-4" dir-paginate="item in items | filter:tag | itemsPerPage: pageSize" current-page="currentPage">
@@ -89,8 +89,20 @@
         </symbol>
     </svg>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    
     <script src="tividenal.js"></script>
+    <script>
+        $( document ).ready(function() {
+            var val = $('#q').val();
+            alert(val);
+        });
+    </script>
+    <script src="components/tagsInput/bootstrap-tagsinput-angular.min.js"></script>
+    <script src="components/tagsInput/bootstrap-tagsinput.min.js"></script>
     <script src="components/pagination/dirPagination.js"></script>
+    
 
   </body>
 </html>
