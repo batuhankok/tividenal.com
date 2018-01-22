@@ -1,0 +1,11 @@
+.odd, .odd em {
+  background: rgb(245, 245, 245) !important;
+}
+
+.even, .even em {
+  background: rgb(238, 238, 238) !important;
+}
+
+.odd.selected, .even.selected, .odd.selected em, .even.selected em {
+  background: #343A40 !important;
+}
