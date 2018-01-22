@@ -5,17 +5,15 @@ function ItemsController($scope, $http) {
   
   $scope.items = null;
 
-  $scope.tags = [
-    'ürün'
-  ];
+  $scope.tags = [{"text":"Batman"}, {"text":"Superman"}];
 
-  var url = "tags.json";
-  $http.get(url).success(function (response) {
-      $scope.tagsJSON = response;
-  });
-
-  $scope.loadTags = function(query) {
-    return $scope.tagsJSON;
+  $scope.loadTags = function($query) {
+    return $http.get('tags.json', { cache: true}).then(function(response) {
+      var productTags = response.data;
+      return productTags.filter(function(productTag) {
+        return productTag.text.toLowerCase().indexOf($query.toLowerCase()) != -1;
+      });
+    });
   };
 
   var url = "items.json";
