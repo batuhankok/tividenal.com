@@ -58,7 +58,8 @@
         <div class="container">
             <div class="row col-lg-12">
 
-                <div class="col-sm-6 col-lg-4" dir-paginate="item in items | filter:tag | itemsPerPage: pageSize" current-page="currentPage">
+                <div class="col-sm-6 col-lg-4" dir-paginate="item in filtered = (items | filter: tag) | itemsPerPage:pageSize" current-page="currentPage">
+                    
                     <div class="card">
                         <a target="_blank" ng-href="{{item.url}}">
                             <img ng-src="{{item.image}}" alt="Card image cap">
@@ -66,6 +67,10 @@
                         </a>
                     </div>
                    
+                </div>
+
+                <div ng-if="filtered.length == 0">
+                    <h5>Aradığınız kriterlerde hiç ürün bulunamadı...</h5>
                 </div>
 
             </div>
