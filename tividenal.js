@@ -1,14 +1,23 @@
 
-var app = angular.module('Tividenal', ['angularUtils.directives.dirPagination','ngTagsInput']);
+var app = angular.module('Tividenal', ['angularUtils.directives.dirPagination', 'ngTagsInput', 'ngUrlParser']);
 
-function ItemsController($scope, $http) {
+function ItemsController($scope, $http, urlParser) {
   
   $scope.items = null;
 
-  $scope.tags = [{"text":"Batman"}, {"text":"Superman"}];
+  $scope.tags = [];
+
+  $scope.hash = decodeURIComponent(urlParser.getHash()).split('/');
+  $scope.hash.splice(0, 1);     
+  
+  $scope.hash.forEach(singleTag => {
+    if(singleTag != ""){
+      $scope.tags.push(singleTag.replace(/-/g, ' '));
+    }
+  });
 
   $scope.loadTags = function($query) {
-    return $http.get('tags.json', { cache: true}).then(function(response) {
+    return $http.get('tags.json', { cache: true }).then(function(response) {
       var productTags = response.data;
       return productTags.filter(function(productTag) {
         return productTag.text.toLowerCase().indexOf($query.toLowerCase()) != -1;

@@ -8,21 +8,18 @@
 
     <title>Tividenal</title>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="assets/js/angular.min.js"></script>
 
     <script>document.write('<base href="' + document.location + '" />');</script>
    
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="components/tagsInput/tagsInputStyle.css" />
+    <!-- Bootstrap core css and components' css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="components/tagsInput/ng-tags-input.css"/>
-    <link rel="stylesheet" href="components/typeahead/style.css"/>
+    <link rel="stylesheet" href="components/tagsInput/ng-tags-input-custom.css" />
 
     <!-- Custom styles for this template -->
     <link href="assets/css/tividenal.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
-
-    
   </head>
 
   <body ng-app="Tividenal">
@@ -42,7 +39,6 @@
             <p class="lead text-muted">
                 Arama kutusuna oyuncu adı, cinsiyet, renk, sahne adı gibi bir çok filtre ekleyerek, merak ettiğiniz ürünü kolayca bulabilirsiniz.
             </p>
-          
             <form class="col-lg-12">
                 <tags-input use-strings="true" ng-model="tags" placeholder="Bir etiket girin..." class="ti-input-lg search" display-property="text" add-on-paste="true" style="border:0!important">
                         <auto-complete min-length="1" source="loadTags($query)"></auto-complete>
@@ -100,15 +96,11 @@
             <path d="M 19.5 3 C 14.26514 3 10 7.2651394 10 12.5 C 10 14.749977 10.810825 16.807458 12.125 18.4375 L 3.28125 27.28125 L 4.71875 28.71875 L 13.5625 19.875 C 15.192542 21.189175 17.250023 22 19.5 22 C 24.73486 22 29 17.73486 29 12.5 C 29 7.2651394 24.73486 3 19.5 3 z M 19.5 5 C 23.65398 5 27 8.3460198 27 12.5 C 27 16.65398 23.65398 20 19.5 20 C 15.34602 20 12 16.65398 12 12.5 C 12 8.3460198 15.34602 5 19.5 5 z" />
         </symbol>
     </svg>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     
     <script src="tividenal.js"></script>
-    <script src="components/pagination/dirPagination.js"></script>
-    <script src="components/tagsInput/ng-tags-input.js"></script>
-    <script src="components/typeahead/bootstrap3-typeahead.min.js"></script>
+    <script src="components/pagination/dirPagination.min.js"></script>
+    <script src="components/tagsInput/ng-tags-input.min.js"></script>
+    <script src="components/urlParser/angularjs-url-parser.min.js"></script>
     
-
   </body>
 </html>

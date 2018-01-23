@@ -140,16 +140,14 @@ tags-input .autocomplete .suggestion-item {
 }
 tags-input .autocomplete .suggestion-item.selected {
   color: #fff;
-  background-color: #0097cf;
+  background: rgb(167, 174, 179) !important;
 }
 tags-input .autocomplete .suggestion-item.selected em {
   color: #fff;
-  background-color: #0097cf;
+  background: rgb(167, 174, 179) !important;
 }
 tags-input .autocomplete .suggestion-item em {
   font: normal bold 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000;
-  background-color: #fff;
+  background: #fff;
 }
-
-/*# sourceMappingURL=ng-tags-input.css.map */
